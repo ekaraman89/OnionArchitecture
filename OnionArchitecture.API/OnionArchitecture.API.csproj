@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\OnionArchitecture.Application\OnionArchitecture.Application.csproj" />
+    <ProjectReference Include="..\OnionArchitecture.Persistance\OnionArchitecture.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
