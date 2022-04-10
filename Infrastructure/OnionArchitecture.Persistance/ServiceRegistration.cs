@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OnionArchitecture.Application.Abstractions;
-using OnionArchitecture.Persistance.Concrete;
+using OnionArchitecture.Persistance.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace OnionArchitecture.Persistance
 {
@@ -8,7 +9,7 @@ namespace OnionArchitecture.Persistance
     {
         public static void AddPersistanceServices(this IServiceCollection services)
         {
-            services.AddSingleton<IProductService, ProductService>();
+            services.AddDbContext<OnionArchitectureDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString));
         }
     }
 }
